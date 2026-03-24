@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SVYATLITSA — Business Plan</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0a0a0a;
+  --bg2: #0f0f0f;
+  --card: #131313;
+  --card-h: #181818;
+  --white: #fff;
+  --warm: #e8e0d4;
+  --gold: #c9a96e;
+  --gold-d: #a8884d;
+  --txt: #9e968a;
+  --dim: #5a5650;
+  --border: #1e1e1e;
+  --green: #4a9e6e;
+  --red: #c96e6e;
+  --serif: 'EB Garamond', Georgia, serif;
+  --sans: 'Inter', -apple-system, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--txt); font-family: var(--sans); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+::selection { background: var(--gold); color: var(--bg); }
+img { display: block; width: 100%; }
+a { color: var(--gold); text-decoration: none; }
+
+/* ═══ LAYOUT ═══ */
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+section { padding: 5rem 0; border-bottom: 1px solid var(--border); }
+
+.label { font-size: 0.6rem; letter-spacing: 0.45em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+h1 { font-family: var(--serif); font-size: clamp(3rem, 7vw, 5.5rem); color: var(--white); font-weight: 400; letter-spacing: 0.15em; line-height: 1; }
+h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3.5vw, 2.8rem); color: var(--white); font-weight: 400; line-height: 1.2; margin-bottom: 1rem; }
+h3 { font-family: var(--serif); font-size: 1.3rem; color: var(--white); font-weight: 400; margin-bottom: 0.8rem; }
+.subtitle { font-size: 1rem; color: var(--txt); max-width: 650px; }
+
+/* ═══ HERO ═══ */
+.hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 3rem 2rem; position: relative; border-bottom: 1px solid var(--border); }
+.hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 50% at 50% 45%, rgba(201,169,110,0.05) 0%, transparent 70%); pointer-events: none; }
+.hero h1 { margin-bottom: 0.5rem; opacity: 0; animation: fadeUp 1s ease-out 0.3s forwards; }
+.hero-sub { font-size: 0.7rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--gold); margin-bottom: 2.5rem; opacity: 0; animation: fadeUp 1s ease-out 0.6s forwards; }
+.hero-desc { font-family: var(--serif); font-size: clamp(1.1rem, 2vw, 1.5rem); color: var(--warm); font-style: italic; max-width: 550px; line-height: 1.6; opacity: 0; animation: fadeUp 1s ease-out 0.9s forwards; }
+.hero-badge { display: inline-block; margin-top: 2.5rem; padding: 0.6rem 2rem; border: 1px solid var(--border); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dim); opacity: 0; animation: fadeUp 1s ease-out 1.2s forwards; }
+
+/* ═══ COVER IMAGE ═══ */
+.cover { position: relative; overflow: hidden; border-bottom: 1px solid var(--border); }
+.cover img { height: 50vh; min-height: 350px; object-fit: cover; filter: brightness(0.75); }
+.cover-overlay { position: absolute; inset: 0; display: flex; align-items: flex-end; padding: 3rem; background: linear-gradient(transparent 40%, rgba(10,10,10,0.85)); }
+.cover-text { font-family: var(--serif); font-size: 1.5rem; color: var(--white); font-weight: 400; }
+
+/* ═══ SUMMARY CARDS ═══ */
+.summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2rem; }
+.s-card { background: var(--card); border: 1px solid var(--border); border-radius: 4px; padding: 1.8rem 1.5rem; text-align: center; transition: border-color 0.3s; }
+.s-card:hover { border-color: var(--gold-d); }
+.s-num { font-family: var(--serif); font-size: 2.2rem; color: var(--white); }
+.s-unit { font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-top: 0.2rem; }
+.s-desc { font-size: 0.78rem; color: var(--dim); margin-top: 0.5rem; }
+
+/* ═══ PHASE SECTIONS ═══ */
+.phase-header { display: flex; align-items: baseline; gap: 1.5rem; margin-bottom: 2rem; }
+.phase-num { font-family: var(--serif); font-size: 4rem; color: var(--gold-d); font-weight: 400; line-height: 1; opacity: 0.4; }
+
+/* ═══ TABLES ═══ */
+table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.85rem; }
+th { text-align: left; padding: 0.7rem 1rem; border-bottom: 1px solid var(--gold-d); color: var(--gold); font-weight: 500; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; }
+td { padding: 0.65rem 1rem; border-bottom: 1px solid var(--border); color: var(--txt); }
+tr:hover td { background: var(--card); }
+td:last-child, th:last-child { text-align: right; }
+td.amount { font-family: var(--serif); font-size: 1rem; color: var(--white); }
+tr.total td { border-top: 2px solid var(--gold-d); border-bottom: none; font-weight: 600; }
+tr.total td.amount { color: var(--gold); font-size: 1.15rem; }
+.status-bought { color: var(--green); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* ═══ IMAGE ROW ═══ */
+.img-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+.img-row img { border-radius: 4px; height: 300px; object-fit: cover; filter: brightness(0.85) contrast(1.05); transition: filter 0.5s; }
+.img-row img:hover { filter: brightness(1); }
+.img-full { margin: 2rem 0; border-radius: 4px; overflow: hidden; }
+.img-full img { height: 400px; object-fit: cover; filter: brightness(0.85); }
+.img-caption { font-size: 0.7rem; color: var(--dim); margin-top: 0.5rem; letter-spacing: 0.05em; }
+
+/* ═══ BUDGET BARS ═══ */
+.bar-row { display: grid; grid-template-columns: 180px 1fr 100px; align-items: center; gap: 1rem; margin: 0.8rem 0; }
+.bar-label { font-size: 0.8rem; color: var(--warm); text-align: right; }
+.bar-track { height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--gold-d), var(--gold)); }
+.bar-val { font-family: var(--serif); font-size: 1rem; color: var(--white); }
+
+/* ═══ TIMELINE ═══ */
+.tl { position: relative; padding-left: 2rem; margin-top: 2rem; }
+.tl::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, var(--gold), var(--border), transparent); }
+.tl-item { padding: 0 0 2rem 2rem; position: relative; }
+.tl-item::before { content: ''; position: absolute; left: -2.05rem; top: 0.35rem; width: 9px; height: 9px; border-radius: 50%; background: var(--bg); border: 1.5px solid var(--gold); }
+.tl-item.now::before { background: var(--gold); box-shadow: 0 0 10px rgba(201,169,110,0.4); }
+.tl-date { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); }
+.tl-title { font-family: var(--serif); font-size: 1.1rem; color: var(--white); margin: 0.2rem 0; }
+.tl-desc { font-size: 0.8rem; color: var(--dim); }
+
+/* ═══ FUNDING SOURCES ═══ */
+.fund-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
+.fund-card { background: var(--card); border: 1px solid var(--border); border-radius: 4px; padding: 1.5rem; }
+.fund-card:hover { border-color: var(--gold-d); }
+.fund-amount { font-family: var(--serif); font-size: 1.5rem; color: var(--white); }
+.fund-src { font-size: 0.85rem; color: var(--warm); margin: 0.3rem 0; }
+.fund-status { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; }
+.fund-status.active { color: var(--green); }
+.fund-status.planned { color: var(--gold-d); }
+.fund-status.search { color: var(--dim); }
+
+/* ═══ BREAKEVEN ═══ */
+.be-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem; text-align: center; }
+.be-num { font-family: var(--serif); font-size: 2.5rem; color: var(--white); }
+.be-label { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-top: 0.3rem; }
+.be-note { font-size: 0.78rem; color: var(--dim); margin-top: 0.3rem; }
+
+/* ═══ FOOTER ═══ */
+footer { padding: 3rem 0; text-align: center; border: none; }
+.f-logo { font-family: var(--serif); font-size: 1.1rem; color: var(--white); letter-spacing: 0.15em; }
+.f-copy { font-size: 0.65rem; color: var(--dim); margin-top: 0.8rem; }
+
+/* ═══ ANIMATIONS ═══ */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
+.reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s ease-out; }
+.reveal.vis { opacity: 1; transform: none; }
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width: 900px) {
+  .summary-grid { grid-template-columns: repeat(2, 1fr); }
+  .fund-grid { grid-template-columns: 1fr; }
+  .be-grid { grid-template-columns: 1fr; }
+  .bar-row { grid-template-columns: 1fr; gap: 0.3rem; }
+  .bar-label { text-align: left; }
+  .img-row { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .summary-grid { grid-template-columns: 1fr; }
+  section { padding: 3.5rem 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero">
+  <h1>SVYATLITSA</h1>
+  <div class="hero-sub">Business Plan &middot; 2026</div>
+  <p class="hero-desc">AI-powered dental clinic. From flagship in Warsaw to franchise across Europe.</p>
+  <div class="hero-badge">Confidential &middot; LABS67</div>
+</section>
+
+<!-- ═══════════ COVER ═══════════ -->
+<div class="cover">
+  <img src="img/gen/00-hero.jpg" alt="SVYATLITSA clinic corridor — glass treatment blocks">
+  <div class="cover-overlay">
+    <div class="cover-text">The clinic that doesn't exist yet.</div>
+  </div>
+</div>
+
+<!-- ═══════════ EXECUTIVE SUMMARY ═══════════ -->
+<section>
+  <div class="wrap reveal">
+    <div class="label">Executive Summary</div>
+    <h2>4 phases. One vision.</h2>
+    <p class="subtitle">Full AI integration. One admin runs the clinic. Edge computing, no cloud. Warsaw flagship, then franchise across the EU.</p>
+
+    <div class="summary-grid">
+      <div class="s-card">
+        <div class="s-num">1.76M</div>
+        <div class="s-unit">PLN total</div>
+        <div class="s-desc">All 4 phases combined</div>
+      </div>
+      <div class="s-card">
+        <div class="s-num">412K</div>
+        <div class="s-unit">EUR total</div>
+        <div class="s-desc">~200K EUR minimum start</div>
+      </div>
+      <div class="s-card">
+        <div class="s-num">18-24</div>
+        <div class="s-unit">months ROI</div>
+        <div class="s-desc">Equipment payback period</div>
+      </div>
+      <div class="s-card">
+        <div class="s-num">75K</div>
+        <div class="s-unit">PLN / month</div>
+        <div class="s-desc">Net profit from month 7</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CORRIDOR DIVIDER ═══════════ -->
+<div class="cover">
+  <img src="img/gen/02-corridor.jpg" alt="Treatment corridor — open and frosted glass blocks">
+  <div class="cover-overlay">
+    <div class="cover-text">Glass walls. Smart glass. One chair per block.</div>
+  </div>
+</div>
+
+<!-- ═══════════ PHASE 1: CLINIC ═══════════ -->
+<section>
+  <div class="wrap reveal">
+    <div class="phase-header">
+      <div class="phase-num">01</div>
+      <div>
+        <div class="label">Phase 1</div>
+        <h2>Flagship Clinic &mdash; Warsaw</h2>
+      </div>
+    </div>
+
+    <div class="img-row">
+      <img src="img/gen/01-reception.jpg" alt="Reception desk with oak accent wall">
+      <img src="img/gen/03-operatory.jpg" alt="Treatment room — ceiling-down equipment">
+    </div>
+
+    <!-- 1.1 Space -->
+    <h3>1.1 Space & Buildout</h3>
+    <table>
+      <tr><th>Item</th><th>PLN</th><th>EUR</th></tr>
+      <tr><td>Lease ~120 m2 (deposit + 3 months)</td><td class="amount">45,000</td><td class="amount">10,500</td></tr>
+      <tr><td>Renovation: walls, floors, electrical, plumbing</td><td class="amount">120,000</td><td class="amount">28,000</td></tr>
+      <tr><td>Interior design (white concrete, oak, aromatherapy)</td><td class="amount">15,000</td><td class="amount">3,500</td></tr>
+      <tr><td>Server room 2nd floor (Faraday cage, safe)</td><td class="amount">8,000</td><td class="amount">1,900</td></tr>
+      <tr><td>Bathrooms (smart sensors, premium finish)</td><td class="amount">12,000</td><td class="amount">2,800</td></tr>
+      <tr><td>Hostel zone (medical tourism, 2-3 beds)</td><td class="amount">25,000</td><td class="amount">5,800</td></tr>
+      <tr class="total"><td>Total Space</td><td class="amount">225,000</td><td class="amount">52,500</td></tr>
+    </table>
+
+    <!-- 1.2 Dental Equipment -->
+    <h3>1.2 Dental Equipment</h3>
+    <table>
+      <tr><th>Item</th><th>PLN</th><th>EUR</th></tr>
+      <tr><td>Dental units x3 (2 rooms, 3 stations)</td><td class="amount">90,000</td><td class="amount">21,000</td></tr>
+      <tr><td>NSK Ti-Max + Bienair handpieces</td><td class="amount">12,000</td><td class="amount">2,800</td></tr>
+      <tr><td>Ultrasonic scalers x3</td><td class="amount">9,000</td><td class="amount">2,100</td></tr>
+      <tr><td>Gnatus curing lights x3</td><td class="amount">6,000</td><td class="amount">1,400</td></tr>
+      <tr><td>Panoramic X-ray (OPG) + RVG sensor</td><td class="amount">80,000</td><td class="amount">18,600</td></tr>
+      <tr><td>CBCT 3D tomograph</td><td class="amount">250,000</td><td class="amount">58,000</td></tr>
+      <tr><td>Intraoral 3D scanner</td><td class="amount">45,000</td><td class="amount">10,500</td></tr>
+      <tr><td>CAD/CAM milling machine</td><td class="amount">180,000</td><td class="amount">42,000</td></tr>
+      <tr><td>Class B autoclaves x2</td><td class="amount">20,000</td><td class="amount">4,700</td></tr>
+      <tr><td>Drill blocks x2 (custom assembly)</td><td class="amount">8,000</td><td class="amount">1,900</td></tr>
+      <tr><td>Instruments & consumables (launch stock)</td><td class="amount">30,000</td><td class="amount">7,000</td></tr>
+      <tr class="total"><td>Total Dental</td><td class="amount">730,000</td><td class="amount">170,000</td></tr>
+    </table>
+
+    <div class="img-row">
+      <img src="img/gen/05-cadcam.jpg" alt="CAD/CAM room">
+      <img src="img/gen/04-storage.jpg" alt="Motorized storage">
+    </div>
+
+    <!-- 1.3 AI / Tech -->
+    <h3>1.3 AI & Technology &mdash; SCYRA.AI</h3>
+    <table>
+      <tr><th>Item</th><th>PLN</th><th>EUR</th><th>Status</th></tr>
+      <tr><td>NVIDIA Jetson AGX Orin 64GB</td><td class="amount">8,500</td><td class="amount">2,000</td><td></td></tr>
+      <tr><td>NVMe 2TB Samsung 990 Pro</td><td class="amount">1,000</td><td class="amount">230</td><td><span class="status-bought">Bought</span></td></tr>
+      <tr><td>NAS Synology 4-bay + 4x16TB HDD</td><td class="amount">6,500</td><td class="amount">1,500</td><td></td></tr>
+      <tr><td>PoE router + switches (private circuit)</td><td class="amount">2,500</td><td class="amount">580</td><td></td></tr>
+      <tr><td>Private PoE cameras x14</td><td class="amount">14,000</td><td class="amount">3,300</td><td></td></tr>
+      <tr><td>Aqara G5 Pro x4 (public circuit)</td><td class="amount">3,200</td><td class="amount">750</td><td></td></tr>
+      <tr><td>UPS for servers + cameras</td><td class="amount">3,000</td><td class="amount">700</td><td></td></tr>
+      <tr><td>Aqara sensors ~30 pcs (presence, temp, smoke, humidity)</td><td class="amount">6,000</td><td class="amount">1,400</td><td></td></tr>
+      <tr><td>Smart outlets x15</td><td class="amount">2,250</td><td class="amount">520</td><td></td></tr>
+      <tr><td>Smart lights x6+</td><td class="amount">1,800</td><td class="amount">420</td><td></td></tr>
+      <tr><td>Roller blind motors + radiator valves</td><td class="amount">4,000</td><td class="amount">930</td><td></td></tr>
+      <tr><td>Patient VR headsets x3</td><td class="amount">4,500</td><td class="amount">1,050</td><td></td></tr>
+      <tr><td>Doctor tablets x3</td><td class="amount">6,000</td><td class="amount">1,400</td><td></td></tr>
+      <tr><td>Individual speakers x3</td><td class="amount">1,500</td><td class="amount">350</td><td></td></tr>
+      <tr><td>Motorized vertical drawer lifts (custom)</td><td class="amount">3,000</td><td class="amount">700</td><td></td></tr>
+      <tr><td>Cables, mounting, misc</td><td class="amount">5,000</td><td class="amount">1,200</td><td></td></tr>
+      <tr class="total"><td>Total Tech</td><td class="amount">72,750</td><td class="amount">17,030</td><td></td></tr>
+    </table>
+
+    <div class="img-row">
+      <img src="img/gen/06-server.jpg" alt="Server room">
+      <img src="img/gen/07-lounge.jpg" alt="Patient lounge">
+    </div>
+
+    <!-- 1.4-1.6 -->
+    <h3>1.4 Software & Licensing (Year 1)</h3>
+    <table>
+      <tr><th>Item</th><th>PLN/year</th><th>EUR/year</th></tr>
+      <tr><td>Supabase Pro (patient DB)</td><td class="amount">1,200</td><td class="amount">280</td></tr>
+      <tr><td>Domains + hosting (6 sites)</td><td class="amount">1,500</td><td class="amount">350</td></tr>
+      <tr><td>OpenRouter / LLM API</td><td class="amount">2,400</td><td class="amount">560</td></tr>
+      <tr class="total"><td>Total Software</td><td class="amount">5,100</td><td class="amount">1,190</td></tr>
+    </table>
+
+    <h3>1.5 Legal & Certification</h3>
+    <table>
+      <tr><th>Item</th><th>PLN</th><th>EUR</th></tr>
+      <tr><td>Clinic registration (NFZ, Sanepid)</td><td class="amount">5,000</td><td class="amount">1,200</td></tr>
+      <tr><td>GDPR / RODO audit + implementation</td><td class="amount">8,000</td><td class="amount">1,900</td></tr>
+      <tr><td>Liability insurance</td><td class="amount">6,000</td><td class="amount">1,400</td></tr>
+      <tr><td>Lawyer (contracts, regulations)</td><td class="amount">10,000</td><td class="amount">2,300</td></tr>
+      <tr><td>Medical license</td><td class="amount">3,000</td><td class="amount">700</td></tr>
+      <tr class="total"><td>Total Legal</td><td class="amount">32,000</td><td class="amount">7,500</td></tr>
+    </table>
+
+    <h3>1.6 Marketing & Launch</h3>
+    <table>
+      <tr><th>Item</th><th>PLN</th><th>EUR</th></tr>
+      <tr><td>Indiegogo campaign (video, translation, 5% fee)</td><td class="amount">8,000</td><td class="amount">1,900</td></tr>
+      <tr><td>Google Ads / Meta Ads (first 3 months)</td><td class="amount">9,000</td><td class="amount">2,100</td></tr>
+      <tr><td>Professional photo/video shoot</td><td class="amount">5,000</td><td class="amount">1,200</td></tr>
+      <tr><td>Signage + interior navigation</td><td class="amount">8,000</td><td class="amount">1,900</td></tr>
+      <tr class="total"><td>Total Marketing</td><td class="amount">30,000</td><td class="amount">7,100</td></tr>
+    </table>
+
+    <h3>1.7 Operations (First 6 Months)</h3>
+    <table>
+      <tr><th>Item</th><th>PLN/month</th><th>6 months PLN</th><th>6 months EUR</th></tr>
+      <tr><td>Lease ~120 m2 (Warsaw)</td><td class="amount">12,000</td><td class="amount">72,000</td><td class="amount">16,800</td></tr>
+      <tr><td>Administrator salary</td><td class="amount">5,000</td><td class="amount">30,000</td><td class="amount">7,000</td></tr>
+      <tr><td>Dentist salary (1, then 2)</td><td class="amount">15,000</td><td class="amount">90,000</td><td class="amount">21,000</td></tr>
+      <tr><td>Assistant salary</td><td class="amount">4,500</td><td class="amount">27,000</td><td class="amount">6,300</td></tr>
+      <tr><td>Dental consumables</td><td class="amount">5,000</td><td class="amount">30,000</td><td class="amount">7,000</td></tr>
+      <tr><td>Utilities + internet</td><td class="amount">2,500</td><td class="amount">15,000</td><td class="amount">3,500</td></tr>
+      <tr><td>Accounting</td><td class="amount">1,500</td><td class="amount">9,000</td><td class="amount">2,100</td></tr>
+      <tr><td>Contingency</td><td class="amount">3,000</td><td class="amount">18,000</td><td class="amount">4,200</td></tr>
+      <tr class="total"><td>Total Operations</td><td class="amount">48,500</td><td class="amount">291,000</td><td class="amount">67,900</td></tr>
+    </table>
+
+    <!-- PHASE 1 TOTAL -->
+    <div style="margin-top: 3rem; padding: 2rem; background: var(--card); border: 1px solid var(--gold-d); border-radius: 4px; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <div class="label" style="margin-bottom: 0.3rem;">Phase 1 Total — Flagship Clinic</div>
+        <div style="font-size: 0.85rem; color: var(--dim);">Space + Equipment + Tech + Legal + Marketing + 6mo Operations</div>
+      </div>
+      <div style="text-align: right;">
+        <div style="font-family: var(--serif); font-size: 2.5rem; color: var(--white);">1,385,850</div>
+        <div style="font-size: 0.65rem; letter-spacing: 0.2em; color: var(--gold);">PLN &middot; ~323,000 EUR</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ PHASE 2: FRANCHISE PACKAGE ═══════════ -->
+<section>
+  <div class="wrap reveal">
+    <div class="phase-header">
+      <div class="phase-num">02</div>
+      <div>
+        <div class="label">Phase 2</div>
+        <h2>Franchise Package</h2>
+      </div>
+    </div>
+    <p class="subtitle">Parallel to clinic operations. Package everything into a replicable system.</p>
+
+    <table>
+      <tr><th>Item</th><th>PLN</th><th>EUR</th><th>Timeline</th></tr>
+      <tr><td>Franchise documentation (operations manual)</td><td class="amount">15,000</td><td class="amount">3,500</td><td>2-3 months</td></tr>
+      <tr><td>EU franchise law attorney</td><td class="amount">25,000</td><td class="amount">5,800</td><td>2 months</td></tr>
+      <tr><td>SOPs, checklists, protocols</td><td class="amount">10,000</td><td class="amount">2,300</td><td>2 months</td></tr>
+      <tr><td>Training program (academi67.com)</td><td class="amount">5,000</td><td class="amount">1,200</td><td>1 month</td></tr>
+      <tr><td>SCYRA.AI product packaging (Jetson + software)</td><td class="amount">20,000</td><td class="amount">4,700</td><td>3 months</td></tr>
+      <tr><td>Context Map (proprietary methodology for franchisees)</td><td class="amount">8,000</td><td class="amount">1,900</td><td>1 month</td></tr>
+      <tr><td>Equipment Standard Association (best-in-class DB)</td><td class="amount">10,000</td><td class="amount">2,300</td><td>ongoing</td></tr>
+      <tr><td>Design kit adaptation (Brand Book ready)</td><td class="amount">5,000</td><td class="amount">1,200</td><td>1 month</td></tr>
+      <tr><td>Investor demo package</td><td class="amount">8,000</td><td class="amount">1,900</td><td>1 month</td></tr>
+      <tr class="total"><td>Total Phase 2</td><td class="amount">106,000</td><td class="amount">24,800</td><td></td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════════ PHASE 3: EU LAUNCH ═══════════ -->
+<section>
+  <div class="wrap reveal">
+    <div class="phase-header">
+      <div class="phase-num">03</div>
+      <div>
+        <div class="label">Phase 3</div>
+        <h2>European Franchise Launch</h2>
+      </div>
+    </div>
+
+    <table>
+      <tr><th>Item</th><th>PLN</th><th>EUR</th></tr>
+      <tr><td>EU trademark registration (EUIPO)</td><td class="amount">4,000</td><td class="amount">930</td></tr>
+      <tr><td>SCYRA system patent (if applicable)</td><td class="amount">15,000</td><td class="amount">3,500</td></tr>
+      <tr><td>International franchise attorney</td><td class="amount">40,000</td><td class="amount">9,300</td></tr>
+      <tr><td>Trade shows / conferences (2-3/year)</td><td class="amount">30,000</td><td class="amount">7,000</td></tr>
+      <tr><td>Business developer (6 months)</td><td class="amount">60,000</td><td class="amount">14,000</td></tr>
+      <tr><td>CRM for franchisees (Supabase / custom)</td><td class="amount">5,000</td><td class="amount">1,200</td></tr>
+      <tr><td>First 3 franchisee support (training, launch)</td><td class="amount">45,000</td><td class="amount">10,500</td></tr>
+      <tr class="total"><td>Total Phase 3</td><td class="amount">199,000</td><td class="amount">46,430</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════════ PHASE 4: DIVISIONS ═══════════ -->
+<section>
+  <div class="wrap reveal">
+    <div class="phase-header">
+      <div class="phase-num">04</div>
+      <div>
+        <div class="label">Phase 4</div>
+        <h2>LABS67 Divisions</h2>
+      </div>
+    </div>
+
+    <table>
+      <tr><th>Division</th><th>Scope</th><th>PLN</th><th>EUR</th></tr>
+      <tr><td>SCYRA.AI</td><td>Productization, licensing, API docs</td><td class="amount">20,000</td><td class="amount">4,700</td></tr>
+      <tr><td>academi67.com</td><td>Course content, video, payment system</td><td class="amount">15,000</td><td class="amount">3,500</td></tr>
+      <tr><td>admin.labs67.com</td><td>CRM improvements, Supabase + Trello integration</td><td class="amount">5,000</td><td class="amount">1,200</td></tr>
+      <tr><td>Agent Hub</td><td>Multi-agent chat, management UI</td><td class="amount">10,000</td><td class="amount">2,300</td></tr>
+      <tr><td>Dental AI App</td><td>Next.js app, WebSocket, voice, vision</td><td class="amount">15,000</td><td class="amount">3,500</td></tr>
+      <tr><td>svyatlitsa.com</td><td>Booking system, multilingual (90% done)</td><td class="amount">2,000</td><td class="amount">470</td></tr>
+      <tr><td>dragona.pl</td><td>SSL fix, admin panel</td><td class="amount">1,000</td><td class="amount">230</td></tr>
+      <tr><td>labs67.com</td><td>Portfolio update, clinic case studies</td><td class="amount">2,000</td><td class="amount">470</td></tr>
+      <tr><td>Content / Twitter</td><td>Video equipment, production</td><td class="amount">3,000</td><td class="amount">700</td></tr>
+      <tr class="total"><td>Total Divisions</td><td></td><td class="amount">73,000</td><td class="amount">17,070</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════════ TOTAL BUDGET ═══════════ -->
+<section style="background: var(--bg2);">
+  <div class="wrap reveal">
+    <div class="label">Total Investment</div>
+    <h2>All Phases Combined</h2>
+
+    <div style="margin-top: 2rem;">
+      <div class="bar-row">
+        <div class="bar-label">Flagship Clinic</div>
+        <div class="bar-track"><div class="bar-fill" style="width: 79%"></div></div>
+        <div class="bar-val">1.39M</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Franchise Launch</div>
+        <div class="bar-track"><div class="bar-fill" style="width: 11%"></div></div>
+        <div class="bar-val">199K</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Franchise Package</div>
+        <div class="bar-track"><div class="bar-fill" style="width: 6%"></div></div>
+        <div class="bar-val">106K</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Divisions</div>
+        <div class="bar-track"><div class="bar-fill" style="width: 4%"></div></div>
+        <div class="bar-val">73K</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 3rem; display: flex; justify-content: space-between; align-items: baseline; padding-top: 2rem; border-top: 2px solid var(--gold-d);">
+      <div style="font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold);">Grand Total</div>
+      <div>
+        <span style="font-family: var(--serif); font-size: 3.5rem; color: var(--white);">1,763,850</span>
+        <span style="font-size: 0.8rem; color: var(--gold); margin-left: 0.5rem;">PLN</span>
+        <span style="font-size: 0.9rem; color: var(--dim); margin-left: 1rem;">~412,000 EUR</span>
+      </div>
+    </div>
+
+    <!-- Minimum start -->
+    <div style="margin-top: 2rem; padding: 1.5rem; border: 1px dashed var(--border); border-radius: 4px;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <div style="font-size: 0.85rem; color: var(--warm);">Minimum Viable Start</div>
+          <div style="font-size: 0.75rem; color: var(--dim); margin-top: 0.2rem;">Without CBCT, CAD/CAM milling, hostel zone</div>
+        </div>
+        <div style="text-align: right;">
+          <span style="font-family: var(--serif); font-size: 2rem; color: var(--white);">~920K PLN</span>
+          <span style="font-size: 0.8rem; color: var(--dim); margin-left: 0.5rem;">~215K EUR</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FUNDING SOURCES ═══════════ -->
+<section>
+  <div class="wrap reveal">
+    <div class="label">Funding Strategy</div>
+    <h2>Where the money comes from</h2>
+
+    <div class="fund-grid">
+      <div class="fund-card">
+        <div class="fund-amount">50-150K EUR</div>
+        <div class="fund-src">Indiegogo Campaign</div>
+        <div class="fund-status active">March 2026 &middot; Campaign text ready</div>
+      </div>
+      <div class="fund-card">
+        <div class="fund-amount">2-5K EUR/mo</div>
+        <div class="fund-src">Upwork Income</div>
+        <div class="fund-status active">Active &middot; Ongoing</div>
+      </div>
+      <div class="fund-card">
+        <div class="fund-amount">10-30K EUR/mo</div>
+        <div class="fund-src">Clinic Revenue</div>
+        <div class="fund-status planned">From month 4-6</div>
+      </div>
+      <div class="fund-card">
+        <div class="fund-amount">50-200K EUR</div>
+        <div class="fund-src">Master Franchise (per country)</div>
+        <div class="fund-status planned">Phase 3 &middot; 2027</div>
+      </div>
+      <div class="fund-card">
+        <div class="fund-amount">100-300K EUR</div>
+        <div class="fund-src">Investor / Angel</div>
+        <div class="fund-status search">Searching</div>
+      </div>
+      <div class="fund-card">
+        <div class="fund-amount">100-150K EUR</div>
+        <div class="fund-src">Equipment Leasing</div>
+        <div class="fund-status planned">Option</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ BREAKEVEN ═══════════ -->
+<section>
+  <div class="wrap reveal">
+    <div class="label">Financials</div>
+    <h2>Break-even Analysis</h2>
+    <p class="subtitle">Average monthly revenue 80-120K PLN. Operating costs ~48.5K PLN/month.</p>
+
+    <div class="be-grid">
+      <div>
+        <div class="be-num">45-65%</div>
+        <div class="be-label">Gross margin</div>
+        <div class="be-note">After consumables & salaries</div>
+      </div>
+      <div>
+        <div class="be-num">18-24</div>
+        <div class="be-label">Months to ROI</div>
+        <div class="be-note">Full equipment payback</div>
+      </div>
+      <div>
+        <div class="be-num">35-75K</div>
+        <div class="be-label">PLN net / month</div>
+        <div class="be-note">From month 7 onwards</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ TIMELINE ═══════════ -->
+<section>
+  <div class="wrap reveal">
+    <div class="label">Roadmap</div>
+    <h2>From Campaign to Franchise</h2>
+
+    <div class="tl">
+      <div class="tl-item now">
+        <div class="tl-date">March 2026</div>
+        <div class="tl-title">Indiegogo Launch</div>
+        <div class="tl-desc">Campaign goes live. Community funding begins.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">April &mdash; June 2026</div>
+        <div class="tl-title">Build & Equip</div>
+        <div class="tl-desc">Lease signed. Renovation starts. Equipment ordered. AI systems installed.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">July &mdash; August 2026</div>
+        <div class="tl-title">Testing & Licensing</div>
+        <div class="tl-desc">SCYRA.AI live testing in real space. Medical licenses obtained. Staff hired.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">September 2026</div>
+        <div class="tl-title">Grand Opening</div>
+        <div class="tl-desc">Flagship clinic opens in Warsaw. First patients.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Q4 2026 &mdash; Q1 2027</div>
+        <div class="tl-title">Franchise Package Development</div>
+        <div class="tl-desc">SOPs, training programs, SCYRA.AI product packaging. Ready to replicate.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Q2 2027</div>
+        <div class="tl-title">First Master Franchise</div>
+        <div class="tl-desc">Country-by-country rollout across the EU begins.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOUNDER ═══════════ -->
+<section>
+  <div class="wrap reveal">
+    <div class="label">Founder</div>
+    <h2>Artsiom Veyalka</h2>
+    <p class="subtitle" style="margin-bottom: 2rem;">CEO, LABS67 &middot; Warsaw, Poland</p>
+
+    <div style="font-family: var(--serif); font-size: 1.3rem; color: var(--warm); font-style: italic; line-height: 1.7; max-width: 700px; padding-left: 1.5rem; border-left: 2px solid var(--gold);">
+      I repair dental equipment myself. I know every motor, every board, every handpiece. I wrote the AI system. I designed the space. SVYATLITSA is the clinic I would want to visit as a patient. I'm building it because no one else has.
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="f-logo">SVYATLITSA</div>
+  <div class="f-copy">LABS67 &copy; 2026 &middot; Business Plan &middot; Confidential</div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
