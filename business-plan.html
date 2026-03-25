@@ -157,6 +157,17 @@ footer { padding: 3rem 0; text-align: center; border: none; }
 .tb-links a.active{color:var(--gold);background:rgba(201,169,110,0.1)}
 .tb-right{display:flex;align-items:center;gap:10px}
 .tb-ver{font-family:monospace;font-size:9px;color:var(--dim);letter-spacing:0.1em;opacity:0.5}
+/* LANG DROPDOWN */
+.lang-switcher{position:relative}
+.lang-current{display:flex;align-items:center;gap:6px;padding:4px 10px;background:transparent;border:1px solid var(--border);border-radius:4px;color:var(--dim);cursor:pointer;font-family:monospace;font-size:9px;letter-spacing:0.04em;transition:all 0.2s}
+.lang-current:hover{color:var(--gold);border-color:var(--gold)}
+.lang-arrow{font-size:8px;transition:transform 0.2s}
+.lang-switcher.open .lang-arrow{transform:rotate(180deg)}
+.lang-dropdown{position:absolute;top:calc(100% + 6px);right:0;background:rgba(10,10,10,0.96);border:1px solid var(--border);min-width:140px;opacity:0;pointer-events:none;transform:translateY(-8px);transition:all 0.25s;z-index:200;max-height:300px;overflow-y:auto;backdrop-filter:blur(20px)}
+.lang-switcher.open .lang-dropdown{opacity:1;pointer-events:auto;transform:translateY(0)}
+.lang-opt{display:block;width:100%;padding:6px 12px;background:none;border:none;color:var(--dim);cursor:pointer;font-family:monospace;font-size:9px;text-align:left;transition:all 0.15s}
+.lang-opt:hover{color:var(--gold);background:rgba(201,169,110,0.08)}
+.lang-opt.active{color:var(--gold)}
 @media(max-width:768px){.topbar{padding:0 16px}.tb-links{display:none}}
 </style>
 </head>
@@ -175,6 +186,22 @@ footer { padding: 3rem 0; text-align: center; border: none; }
     <a href="business-plan.html" class="active">Business Plan</a>
   </div>
   <div class="tb-right">
+    <div class="lang-switcher" onclick="this.classList.toggle('open')">
+      <button class="lang-current"><span>🇬🇧 EN</span> <span class="lang-arrow">▾</span></button>
+      <div class="lang-dropdown">
+        <button class="lang-opt" data-lang="be">🇧🇾 BY</button>
+        <button class="lang-opt active" data-lang="en">🇬🇧 EN</button>
+        <button class="lang-opt" data-lang="uk">🇺🇦 UK</button>
+        <button class="lang-opt" data-lang="ru">🇷🇺 RU</button>
+        <button class="lang-opt" data-lang="de">🇩🇪 DE</button>
+        <button class="lang-opt" data-lang="fr">🇫🇷 FR</button>
+        <button class="lang-opt" data-lang="es">🇪🇸 ES</button>
+        <button class="lang-opt" data-lang="it">🇮🇹 IT</button>
+        <button class="lang-opt" data-lang="pt">🇵🇹 PT</button>
+        <button class="lang-opt" data-lang="ja">🇯🇵 JA</button>
+        <button class="lang-opt" data-lang="ko">🇰🇷 KO</button>
+      </div>
+    </div>
     <div class="tb-ver">v1.0 | 2026-03-25</div>
   </div>
 </div>
