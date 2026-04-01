@@ -1,20 +1,5 @@
-const LANG_FLAGS_SUB = {
-  by: '<rect width="18" height="4" fill="#fff"/><rect y="4" width="18" height="4" fill="#CF101A"/><rect y="8" width="18" height="4" fill="#fff"/>',
-  ua: '<rect width="18" height="6" fill="#005BBB"/><rect y="6" width="18" height="6" fill="#FFD500"/>',
-  en: '<rect width="18" height="12" fill="#012169"/><path d="M0,0 L18,12 M18,0 L0,12" stroke="#fff" stroke-width="2"/><rect x="7" width="4" height="12" fill="#fff"/><rect y="4" width="18" height="4" fill="#fff"/><rect x="8" width="2" height="12" fill="#C8102E"/><rect y="5" width="18" height="2" fill="#C8102E"/>',
-  pl: '<rect width="18" height="6" fill="#fff"/><rect y="6" width="18" height="6" fill="#DC143C"/>',
-  fr: '<rect width="6" height="12" fill="#002395"/><rect x="6" width="6" height="12" fill="#fff"/><rect x="12" width="6" height="12" fill="#ED2939"/>',
-  de: '<rect width="18" height="4" fill="#000"/><rect y="4" width="18" height="4" fill="#DD0000"/><rect y="8" width="18" height="4" fill="#FFCE00"/>',
-  ru: '<rect width="18" height="4" fill="#fff"/><rect y="4" width="18" height="4" fill="#0039A6"/><rect y="8" width="18" height="4" fill="#fff"/>',
-  es: '<rect width="18" height="3" fill="#AA151B"/><rect y="3" width="18" height="6" fill="#F1BF00"/><rect y="9" width="18" height="3" fill="#AA151B"/>',
-  it: '<rect width="6" height="12" fill="#009246"/><rect x="6" width="6" height="12" fill="#fff"/><rect x="12" width="6" height="12" fill="#CE2B37"/>',
-  pt: '<rect width="7" height="12" fill="#006600"/><rect x="7" width="11" height="12" fill="#FF0000"/><circle cx="7" cy="6" r="2.5" fill="#FF0" stroke="#006600" stroke-width="0.3"/>',
-  ja: '<rect width="18" height="12" fill="#fff"/><circle cx="9" cy="6" r="3.2" fill="#BC002D"/>',
-  ko: '<rect width="18" height="12" fill="#fff"/><circle cx="9" cy="6" r="3" fill="#CD2E3A"/><path d="M9,6 a1.5,1.5 0 0,1 0,3 a1.5,1.5 0 0,0 0,-3" fill="#0047A0"/><path d="M9,3 a1.5,1.5 0 0,0 0,3 a1.5,1.5 0 0,1 0,-3" fill="#0047A0"/>',
-};
-
-const i18n = {
-  by: {nav_about:'Пра нас',nav_programs:'Праграмы',nav_who:'Для каго',nav_apply:'Падаць заяўку',logo_sub:'Канцэрн LABS67',
+window.i18n = {
+  be: {nav_about:'Пра нас',nav_programs:'Праграмы',nav_who:'Для каго',nav_apply:'Падаць заяўку',logo_sub:'Канцэрн LABS67',
     title: 'SLYAH.AI — Інстытут клінічных стандартаў · LABS67',
     nav_cta: 'Падаць заяўку',
         hero_h1_1: 'Інстытут клінічных',
@@ -79,7 +64,7 @@ const i18n = {
     footer_sub:'Канцэрн LABS67',
     track1_tag:'ТРЭК_01 · АСНОЎНЫ',track2_tag:'ТРЭК_02 · ТЭХНАЛАГІЧНЫ',track3_tag:'ТРЭК_03 · ДАСЛЕДЧЫ',
   },
-  ua: {nav_about:'Про нас',nav_programs:'Програми',nav_who:'Для кого',nav_apply:'Подати заявку',logo_sub:'Концерн LABS67',
+  uk: {nav_about:'Про нас',nav_programs:'Програми',nav_who:'Для кого',nav_apply:'Подати заявку',logo_sub:'Концерн LABS67',
     title: 'SLYAH.AI — Інститут клінічних стандартів · LABS67',
     nav_cta: 'Подати заявку',
         hero_h1_1: 'Інститут клінічних',
@@ -796,8 +781,8 @@ const i18n = {
   },
 };
 const LANG_FLAGS = {
-  by:`<rect width="18" height="4" fill="#fff"/><rect y="4" width="18" height="4" fill="#CF101A"/><rect y="8" width="18" height="4" fill="#fff"/>`,
-  ua:`<rect width="18" height="6" fill="#005BBB"/><rect y="6" width="18" height="6" fill="#FFD500"/>`,
+  be:`<rect width="18" height="4" fill="#fff"/><rect y="4" width="18" height="4" fill="#CF101A"/><rect y="8" width="18" height="4" fill="#fff"/>`,
+  uk:`<rect width="18" height="6" fill="#005BBB"/><rect y="6" width="18" height="6" fill="#FFD500"/>`,
   en:`<rect width="18" height="12" fill="#012169"/><path d="M0,0 L18,12 M18,0 L0,12" stroke="#fff" stroke-width="2"/><rect x="7" width="4" height="12" fill="#fff"/><rect y="4" width="18" height="4" fill="#fff"/><rect x="8" width="2" height="12" fill="#C8102E"/><rect y="5" width="18" height="2" fill="#C8102E"/>`,
   pl:`<rect width="18" height="6" fill="#fff"/><rect y="6" width="18" height="6" fill="#DC143C"/>`,
   fr:`<rect width="6" height="12" fill="#002395"/><rect x="6" width="6" height="12" fill="#fff"/><rect x="12" width="6" height="12" fill="#ED2939"/>`,
