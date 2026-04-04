@@ -2,7 +2,7 @@
 <style>
 :root{--bg:#fff;--bg2:#f5f5f7;--bg3:#1d1d1f;--text:#1d1d1f;--text2:#86868b;--text-inv:#f5f5f7;--blue:#2b7acc;--blue2:#185fa5;--blue-soft:rgba(43,122,204,0.08);--gold:#bf9b30;--border:rgba(0,0,0,0.08);--mono:'JetBrains Mono',monospace;--sans:-apple-system,BlinkMacSystemFont,'SF Pro Display','Helvetica Neue',Arial,sans-serif;--ease:cubic-bezier(.25,.1,.25,1);}
 *{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;}
 body{font-family:var(--sans);color:var(--text);background:var(--bg);overflow-x:hidden;}
 
 /* NAV */
@@ -174,6 +174,7 @@ footer{padding:20px 24px;background:var(--bg2);text-align:center;}
 @media(max-width:960px){
   nav{padding:0 16px;}
   .nav-links{display:none;}
+  .nav-cta{display:none;}
   .hero{padding:100px 20px 60px;min-height:auto;}
   .stats-bar{gap:30px;padding:40px 20px;flex-wrap:wrap;}
   .stat-n{font-size:36px;}
