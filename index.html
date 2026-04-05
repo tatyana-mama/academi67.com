@@ -329,7 +329,7 @@ footer{padding:20px 24px;background:var(--bg2);text-align:center;}
       <div class="who-item" style="border-color:rgba(255,255,255,0.08);">
         <div class="wi-icon">&#127973;</div>
         <div>
-          <div class="wi-title" data-i18n="who2_t">Каманды франчайзі</div>
+          <div class="wi-title" data-i18n="who2_t">Каманды партнёраў</div>
           <div class="wi-desc" style="color:rgba(245,245,247,0.5);" data-i18n="who2_d">Партнёры SVITA праходзяць SLYAH.AI перад адкрыццём — гэта частка стандарту канцэрна.</div>
         </div>
       </div>
@@ -357,7 +357,7 @@ footer{padding:20px 24px;background:var(--bg2);text-align:center;}
       <div class="guarantee-card" style="border-color:rgba(191,155,48,0.2);">
         <div class="gc-label" style="color:var(--gold);" data-i18n="sb2_lbl">Для партнёраў SVITA</div>
         <div class="gc-text" data-i18n="sb2_t">Навучанне каманды ўваходзіць у пакет падтрымкі пры адкрыцці клінікі.</div>
-        <div class="gc-sub" data-i18n="sb2_s">Франчайзі не займаюцца пошукам і навучаннем персаналу ў адзіночку — SLYAH.AI закрывае гэтую задачу цалкам.</div>
+        <div class="gc-sub" data-i18n="sb2_s">Партнёры не займаюцца пошукам і навучаннем персаналу ў адзіночку — SLYAH.AI закрывае гэтую задачу цалкам.</div>
       </div>
     </div>
   </div>
@@ -452,7 +452,7 @@ let chatOpen=false;
 function tc(){chatOpen=!chatOpen;document.getElementById('cwin').classList.toggle('open',chatOpen);}
 function am(t,b){const m=document.getElementById('cm');const d=document.createElement('div');d.className=b?'mb':'mu';if(b)d.innerHTML='<span class="ms">SLYAH.AI</span>'+t;else d.textContent=t;m.appendChild(d);m.scrollTop=m.scrollHeight;}
 function so(opts){const e=document.getElementById('co');e.innerHTML='';opts.forEach(t=>{const b=document.createElement('button');b.className='opt';b.textContent=t;b.onclick=()=>sm(t);e.appendChild(b);});}
-function sm(t){document.getElementById('co').innerHTML='';am(t,false);setTimeout(()=>{const l=t.toLowerCase();if(l.includes('праграм')||l.includes('трэк')||l.includes('програм')||l.includes('трек'))am('Тры трэкі: <b>Clinical Reboot</b> (2 тыд, абавязковы), <b>AI Integration Cert</b> (1 тыд, практыка), <b>R&D Lab</b> (пастаяннае ўдзел для лідараў).',true),so(['Падаць заяўку','Clinical Reboot','AI Cert']);else if(l.includes('кошт')||l.includes('стоим')||l.includes('цен'))am('Кошт абмяркоўваецца індывідуальна. Для партнёраў SVITA — уключана ў пакет падтрымкі. Пішыце: academi@labs67.com',true),so(['Падаць заяўку','Я партнёр LABS67']);else if(l.includes('заяўк')||l.includes('запіс'))am('Запоўніце форму на гэтай старонцы — або напішыце напрамую: academi@labs67.com · +48 571 719 800.',true),so(['Добра, дзякуй']);else if(l.includes('партнёр')||l.includes('franchise'))am('Для партнёраў SVITA навучанне каманды ўваходзіць у пакет падтрымкі. Пры падачы заяўкі пазначце, што вы партнёр канцэрна.',true),so(['Падаць заяўку','Даведацца пра SVITA']);else am('Для адказу: academi@labs67.com · +48 571 719 800',true),so(['Праграмы','Заяўка','Кошт']);},500);}
+function sm(t){document.getElementById('co').innerHTML='';am(t,false);setTimeout(()=>{const l=t.toLowerCase();if(l.includes('праграм')||l.includes('трэк')||l.includes('програм')||l.includes('трек'))am('Тры трэкі: <b>Clinical Reboot</b> (2 тыд, абавязковы), <b>AI Integration Cert</b> (1 тыд, практыка), <b>R&D Lab</b> (пастаяннае ўдзел для лідараў).',true),so(['Падаць заяўку','Clinical Reboot','AI Cert']);else if(l.includes('кошт')||l.includes('стоим')||l.includes('цен'))am('Кошт абмяркоўваецца індывідуальна. Для партнёраў SVITA — уключана ў пакет падтрымкі. Пішыце: academi@labs67.com',true),so(['Падаць заяўку','Я партнёр LABS67']);else if(l.includes('заяўк')||l.includes('запіс'))am('Запоўніце форму на гэтай старонцы — або напішыце напрамую: academi@labs67.com · +48 571 719 800.',true),so(['Добра, дзякуй']);else if(l.includes('партнёр')||l.includes('concept'))am('Для партнёраў SVITA навучанне каманды ўваходзіць у пакет падтрымкі. Пры падачы заяўкі пазначце, што вы партнёр канцэрна.',true),so(['Падаць заяўку','Даведацца пра SVITA']);else am('Для адказу: academi@labs67.com · +48 571 719 800',true),so(['Праграмы','Заяўка','Кошт']);},500);}
 function sc(){const i=document.getElementById('ci');const v=i.value.trim();if(!v)return;i.value='';document.getElementById('co').innerHTML='';sm(v);}
 
 // FORM
